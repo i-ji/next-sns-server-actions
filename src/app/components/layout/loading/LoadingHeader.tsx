@@ -2,13 +2,12 @@ import React from "react";
 import { FaUser } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa";
 import { FaPen } from "react-icons/fa";
-import HeaderTemp from "../HeaderTemp";
+import HeaderTemp from "../header/HeaderTemp";
 
 const LoadingHeader = () => {
   const topSlot = (
     <>
       <FaUser />
-
       <FaTwitter />
       <FaPen />
     </>

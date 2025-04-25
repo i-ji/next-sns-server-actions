@@ -10,8 +10,7 @@ const LoadingPage = ({ headerSlot }: LoadingPageType) => {
     <div className="max-w-[640px] mx-auto">
       {headerSlot}
 
-      <div className="mt-[125px] sm:mt-[150px] space-y-3 pb-10">
-        <SkeletonCard />
+      <div className="mt-[104px] sm:mt-[150px] space-y-3 pb-10">
         <SkeletonCard />
         <SkeletonCard />
         <SkeletonCard />

@@ -43,3 +43,12 @@ export const updateScreenPost = (
   });
   return newPosts;
 };
+
+export const useDetermineIsFouUser = <T>(
+  isForUser: boolean,
+  value1: T,
+  value2: T
+) => {
+  const result = isForUser ? value1 : value2;
+  return result;
+};

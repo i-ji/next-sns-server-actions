@@ -3,8 +3,8 @@ import { UserType, PostType } from "@/utils/interface";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { FaAngleDoubleLeft, FaAngleDoubleRight } from "react-icons/fa";
 import HeaderTemp from "./HeaderTemp";
-import PostBtn from "../parts/PostBtn";
-import FollowBtn from "../parts/FollowBtn";
+import PostBtn from "../../parts/PostBtn";
+import FollowBtn from "../../parts/FollowBtn";
 
 interface UserHeaderType {
   user: UserType;

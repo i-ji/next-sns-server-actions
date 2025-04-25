@@ -3,7 +3,7 @@ import { FaUser } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa";
 import HeaderTemp from "./HeaderTemp";
 import { PostType } from "@/utils/interface";
-import PostBtn from "../parts/PostBtn";
+import PostBtn from "../../parts/PostBtn";
 
 interface HeaderType {
   isForYouUser: boolean;

@@ -24,8 +24,8 @@ const PostBtn = ({ reflectedScreenPost }: PostBtnType) => {
     const body = String(formData.get("body"));
     if (body === "") return;
 
-    const post = await addActionPost(body);
-    const newPost = post as unknown as PostType;
+    const result = await addActionPost(body);
+    const newPost = result as unknown as PostType;
     reflectedScreenPost(newPost);
 
     setOpen(false);

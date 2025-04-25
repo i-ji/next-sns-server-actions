@@ -21,70 +21,72 @@ const PostItem = ({
   destroyPost,
   updatePost,
 }: PostItemType) => {
-  const deletePost = (id: number) => {
-    destroyPost(id);
-  };
-
   const [isEdit, setIsEdit] = useState(false);
-  const [editedBody, setEditedBody] = useState(post.body);
 
-  const editPost = async (id: number) => {
-    if (editedBody === "") return;
+  const btnAction = async (formData: FormData, id: number) => {
+    const btn = formData.get("btn");
 
-    updatePost(id, editedBody);
-    setIsEdit(false);
+    if (btn === "update") {
+      const body = String(formData.get("editedBody"));
+      updatePost(id, body);
+      setIsEdit(false);
+    } else if (btn === "delete") {
+      destroyPost(id);
+    }
   };
-
-  // const editPost = async (formData: FormData) => {
-  //   const btn = formData.get("deleteAndEdit");
-  // };
 
   const deleteAndEdit = (
     <div className=" w-[50px] flex items-center justify-between">
       {isEdit ? (
-        <CiSaveDown2
-          onClick={() => editPost(post.id)}
-          className="cursor-pointer"
-        />
+        <button className="cursor-pointer" name="btn" value="update">
+          <CiSaveDown2 />
+        </button>
       ) : (
         <FiEdit onClick={() => setIsEdit(true)} className="cursor-pointer" />
       )}
-      <MdDeleteOutline
-        onClick={() => deletePost(post.id)}
-        className="cursor-pointer"
-      />
+
+      <button className="cursor-pointer" name="btn" value="delete">
+        <MdDeleteOutline />
+      </button>
     </div>
   );
 
   return (
     <Card key={post.id} className="mx-1 sm:mx-0">
-      <CardHeader>
-        <CardTitle className="font-bold text-2xl flex justify-between">
-          <Link href={`/user/${post.user_id}`} className=" hover:underline">
-            {post.users.name}
-          </Link>
+      <form
+        action={async (formData: FormData) => {
+          await btnAction(formData, post.id);
+        }}
+      >
+        <CardHeader>
+          <CardTitle className="font-bold text-2xl flex justify-between">
+            <Link
+              href={`/user/${post.user_id}`}
+              scroll={false}
+              className="hover:underline"
+            >
+              {post.users.name}
+            </Link>
 
-          {post.user_id === 11 ? (
-            deleteAndEdit
+            {post.user_id === 11 ? (
+              deleteAndEdit
+            ) : (
+              <FollowBtn
+                isFollow={post.users.isFollow}
+                user_id={post.user_id}
+                toggleScreenFollowBtn={toggleScreenFollowBtn}
+              />
+            )}
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          {isEdit ? (
+            <Input name="editedBody" defaultValue={post.body} />
           ) : (
-            <FollowBtn
-              isFollow={post.users.isFollow}
-              user_id={post.user_id}
-              toggleScreenFollowBtn={toggleScreenFollowBtn}
-            />
+            <p>{post.body}</p>
           )}
-        </CardTitle>
-      </CardHeader>
-      <CardContent>
-        {isEdit ? (
-          <Input
-            onChange={(e) => setEditedBody(e.target.value)}
-            value={editedBody}
-          />
-        ) : (
-          <p>{post.body}</p>
-        )}
-      </CardContent>
+        </CardContent>
+      </form>
     </Card>
   );
 };

@@ -28,9 +28,35 @@ export async function updateActionPost(id: number, body: string) {
     const { data, error } = await supabase
       .from("posts")
       .update({ body: body })
-      .eq("id", id).select(`id, body, user_id, users (
+      .eq("id", id)
+      .select(
+        `id, body, user_id, users (
       name, isFollow
-    )`);
+    )`
+      )
+      .single();
+
+    if (error) {
+      throw error;
+    }
+    return data;
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+export async function deleteActionPost(id: number) {
+  try {
+    const { data, error } = await supabase
+      .from("posts")
+      .delete()
+      .eq("id", id)
+      .select(
+        `id, body, user_id, users (
+      name, isFollow
+    )`
+      )
+      .single();
 
     if (error) {
       throw error;

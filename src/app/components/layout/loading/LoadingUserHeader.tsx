@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { FaAngleDoubleLeft, FaAngleDoubleRight } from "react-icons/fa";
-import HeaderTemp from "../HeaderTemp";
+import HeaderTemp from "../header/HeaderTemp";
 
 const LoadingUserHeader = () => {
   const topSlot = (

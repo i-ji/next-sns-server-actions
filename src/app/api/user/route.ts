@@ -8,5 +8,4 @@ export async function GET() {
 
   if (error) return NextResponse.json(error);
   return NextResponse.json(users);
-  // return Response.json({ message: "Hello World" });
 }

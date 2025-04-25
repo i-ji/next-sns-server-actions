@@ -2,9 +2,11 @@ const POST_ENDPOINT = "http://localhost:3000/api/post";
 const FOLLOWEDUSERPOST_ENDPOINT = "http://localhost:3000/api/followedUserPost";
 const USER_ENDPOINT = "http://localhost:3000/api/user";
 
-export const getAllAPIPosts = async () => {
+export const getAllAPIPosts = async (offset: number, limit: string = "10") => {
   try {
-    const res = await fetch(POST_ENDPOINT);
+    const res = await fetch(
+      `${POST_ENDPOINT}/?offset=${offset}&limit=${limit}`
+    );
 
     const posts = res.json();
     return posts;
@@ -44,9 +46,19 @@ export const deleteAPIPost = async (id: number) => {
   }
 };
 
-export const getFollowedUserAPIPosts = async () => {
+export const getFollowedUserAPIPosts = async (
+  offset: number,
+  limit: string = "10"
+) => {
   try {
-    const res = await fetch(FOLLOWEDUSERPOST_ENDPOINT);
+    const queryParams = new URLSearchParams({
+      offset: offset.toString(),
+      limit: limit.toString(),
+    });
+
+    const res = await fetch(
+      `${FOLLOWEDUSERPOST_ENDPOINT}/?${queryParams.toString()}`
+    );
 
     const posts = res.json();
     return posts;
