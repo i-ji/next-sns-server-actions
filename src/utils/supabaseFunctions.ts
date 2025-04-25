@@ -1,6 +1,6 @@
-const POST_ENDPOINT = "http://localhost:3000/api/post";
-const FOLLOWEDUSERPOST_ENDPOINT = "http://localhost:3000/api/followedUserPost";
-const USER_ENDPOINT = "http://localhost:3000/api/user";
+const POST_ENDPOINT = "/api/post";
+const FOLLOWEDUSERPOST_ENDPOINT = "/api/followedUserPost";
+const USER_ENDPOINT = "/api/user";
 
 export const getAllAPIPosts = async (offset: number, limit: string = "10") => {
   try {
@@ -12,6 +12,7 @@ export const getAllAPIPosts = async (offset: number, limit: string = "10") => {
     return posts;
   } catch (error) {
     console.error(error);
+    return [];
   }
 };
 
@@ -28,6 +29,7 @@ export const updateAPIPost = async (id: number, body: string) => {
     return post;
   } catch (error) {
     console.error(error);
+    return [];
   }
 };
 
@@ -43,6 +45,7 @@ export const deleteAPIPost = async (id: number) => {
     return post;
   } catch (error) {
     console.error(error);
+    return [];
   }
 };
 
@@ -64,6 +67,7 @@ export const getFollowedUserAPIPosts = async (
     return posts;
   } catch (error) {
     console.error(error);
+    return [];
   }
 };
 
@@ -75,6 +79,7 @@ export const getAPIUser = async (id: string) => {
     return user;
   } catch (error) {
     console.error(error);
+    return [];
   }
 };
 
@@ -90,5 +95,6 @@ export const toggleFollowAPIUser = async (id: number, isFollow: boolean) => {
     return user;
   } catch (error) {
     console.error(error);
+    return [];
   }
 };
