@@ -5,7 +5,7 @@ interface ParamsType {
   params: Promise<{ userId: string }>;
 }
 
-export async function GET(response: NextResponse, { params }: ParamsType) {
+export async function GET(request: NextRequest, { params }: ParamsType) {
   const { userId } = await params;
   const { data: users, error } = await supabase
     .from("users")

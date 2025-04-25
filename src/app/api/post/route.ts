@@ -4,18 +4,7 @@ import { supabase } from "@/utils/supabase";
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const offset = parseInt(searchParams.get("offset") || "0", 10);
-  // const limit = parseInt(searchParams.get("limit") || "10", 10);
   const limitParam = searchParams.get("limit");
-
-  // const { data: posts, error } = await supabase
-  //   .from("posts")
-  //   .select(
-  //     `id, body, user_id, users (
-  //     name, isFollow
-  //   )`
-  //   )
-  //   .range(offset, offset + limit - 1)
-  //   .order("id", { ascending: false });
 
   let query = supabase
     .from("posts")
