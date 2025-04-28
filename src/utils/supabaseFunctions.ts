@@ -1,6 +1,8 @@
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+
 const POST_ENDPOINT = "/api/post";
 const FOLLOWEDUSERPOST_ENDPOINT = "/api/followedUserPost";
-const USER_ENDPOINT = "/api/user";
+const USER_ENDPOINT = `${BASE_URL}/api/user`;
 
 export const getAllAPIPosts = async (offset: number, limit: string = "10") => {
   try {
