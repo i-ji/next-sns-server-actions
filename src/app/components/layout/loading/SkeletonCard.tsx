@@ -8,7 +8,7 @@ const SkeletonCard = () => {
     <Card className="mx-1 sm:mx-0 gap-1.5">
       <CardHeader>
         <CardTitle className="font-bold text-2xl flex justify-between">
-          <Skeleton className="w-8/12 sm:w-[390px] h-8 rounded-full mt-1.5 sm:mt-0" />
+          <Skeleton className="w-7/12 sm:w-[390px] h-8 rounded-full mt-0" />
           <Button
             variant="outline"
             className="rounded-2xl w-[100px] ml-auto h-[30px]"

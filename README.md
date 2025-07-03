@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## The-View
 
-## Getting Started
+<img width="1064" alt="Image" src="./public/thumbnail.jpg" />
 
-First, run the development server:
+## URL
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+https://next-sns-server-actions.vercel.app/
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 概要
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+このアプリは X（旧 Twitter）を意識した SNS 風アプリです。<br>
+投稿・編集・削除・フォローといった基本的な SNS 機能を備えつつ、ユーザー体験を意識して <br>
+無限スクロール や 最新の技術スタック（Server Actions / Supabase） を活用し、本格的な SNS アプリケーションとして仕上げました。
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## サービスへの想い
 
-## Learn More
+このアプリは、Route Handlers や Server Actions、Supabase、Intersection Observer API などの技術を学ぶことを目的に作成しました。<br>
+機能やデザインはシンプルですが、最低限の使いやすさと自然な操作感を大切にしています。<br>
+今後は、ユーザー認証や投稿検索などの機能を追加し、より実用的なアプリへと発展させていく予定です。<br>
 
-To learn more about Next.js, take a look at the following resources:
+## 使用技術
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- フロントエンド React 19 Next.js 15.2.3 TypeScript 5
+- スタイリング Tailwind CSS 4 shadcn/ui
+- バックエンド supabase 2.49.1
+- デプロイ vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 作者について
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<a href="https://github.com/i-ji">@j-ito</a> <br>
+<a href="https://j-ito-portfolio.vercel.app/">ポートフォリオ</a>

@@ -9,12 +9,12 @@ const LoadingUserHeader = () => {
   const topSlot = (
     <>
       <IoMdArrowRoundBack />
-      <h1 className="absolute left-1/3 sm:left-80 sm:-translate-x-1/2 w-[270px]">
+      <h1 className="absolute left-1/3 sm:left-80 -translate-x-1/12 sm:-translate-x-1/2 w-[270px]">
         <Skeleton className="w-1/2 sm:w-full h-[24px] sm:h-[30px] rounded-full" />
       </h1>
 
       <Button
-        className=" rounded-2xl sm:w-[100px] ml-auto h-[30px]"
+        className=" rounded-2xl w-[100px] ml-auto h-[30px]"
         variant="outline"
       >
         Follow
